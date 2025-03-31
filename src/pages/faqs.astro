@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import Accordion from "@/components/Accordion.astro";
+import AccordionItems from "@/components/AccordionItems.astro";
+
+let faqBookingEntries = await getCollection("faq", ({ id }) => {
+  return id.startsWith("booking/");
+});
+faqBookingEntries.sort((a, b) => a.data.order - b.data.order);
+
+let faqServicesEntries = await getCollection("faq", ({ id }) => {
+  return id.startsWith("services/");
+});
+faqServicesEntries.sort((a, b) => a.data.order - b.data.order);
+
+let faqProductsEntries = await getCollection("faq", ({ id }) => {
+  return id.startsWith("products/");
+});
+faqProductsEntries.sort((a, b) => a.data.order - b.data.order);
+
+const pageTitle = "FAQs";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="w-full flex flex-col mx-auto max-w-prose mt-28 px-8">
+    <h1 class="mb-8">Frequently Asked Questions</h1>
+    <Accordion>
+      <section class="mb-12">
+        <h2 class="text-4xl">Booking</h2>
+        <AccordionItems items={faqBookingEntries} indOffset={0} />
+      </section>
+      <section class="mb-12">
+        <h2 class="text-4xl">Services</h2>
+        <AccordionItems items={faqServicesEntries} indOffset={10} />
+      </section>
+      <section class="mb-12">
+        <h2 class="text-4xl">Products</h2>
+        <AccordionItems items={faqProductsEntries} indOffset={10} />
+      </section>
+    </Accordion>
+  </div>
+</BaseLayout>
