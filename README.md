@@ -97,7 +97,7 @@ It has a simple schema comprising the `question` itself, a `category` for groupi
 The schema is mostly self-explanatory, but there are some defined but unused fields:
 
 - `category` was originally for grouping the services (e.g. facial, threading, etc.) but for now the grouping is simply "Services" and "Add-Ons"
-- `deposit` was originally for customized deposits on a per-service basis, but for now a blanket 50% deposit is in effect for all services
+- `deposit` was originally for customized deposits on a per-service basis, but for now a blanket $25 deposit is in effect for all services
 - `imgSrc` and `imgAlt` were originally to recreate a card-based layout of services where each service's title and description were accompanied by a descriptive image, but this was ignored in favor of a simple "menu" style of listing available services
 
 ## Components of Note

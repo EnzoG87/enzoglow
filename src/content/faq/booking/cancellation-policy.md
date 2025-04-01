@@ -4,7 +4,7 @@ category: "booking"
 order: 2
 ---
 
-A 50% deposit is required for all services, which will be applied towards the service and are non-refundable.
+A $25 deposit is required for all services, which will be applied towards the service and are non-refundable.
 Consultation services must be paid in full to book a time.
 
 Late arrivals of more than 10 minutes will be rescheduled, and the deposit will be applied towards the next appointment.
