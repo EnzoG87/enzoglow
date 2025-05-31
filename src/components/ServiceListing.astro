@@ -6,6 +6,7 @@ interface Props {
 }
 
 import ServiceNonModal from "./ServiceNonModal.astro";
+import ServiceNonModalCostTimeRange from "./ServiceNonModalCostTimeRange.astro";
 import ServiceModal from "./ServiceModal.astro";
 
 const { items } = Astro.props;
@@ -25,6 +26,17 @@ const { items } = Astro.props;
         >
           <Content />
         </ServiceModal>
+      );
+    } else if (item.data.title === "Consultation") {
+      return (
+        <ServiceNonModalCostTimeRange
+          title={item.data.title}
+          cost={item.data.cost}
+          duration={item.data.duration}
+          anchorId={item.data.anchorId}
+        >
+          <Content />
+        </ServiceNonModalCostTimeRange>
       );
     } else {
       return (
