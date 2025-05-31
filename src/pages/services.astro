@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -15,12 +16,35 @@ const addOns = services.filter((service) => {
 });
 
 import ServiceListing from "@/components/ServiceListing.astro";
+import redReliefFacialImg from "@/assets/services/red-relief-facial.jpg";
 
 const pageTitle = "Services";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="mx-auto max-w-prose mt-28 mb-16 px-8">
+  <section class="mx-auto">
+    <div class="relative h-[480px] w-full">
+      <Image
+        src={redReliefFacialImg}
+        alt="facials"
+        class="h-full w-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 h-full w-full bg-black opacity-60"></div>
+      <!-- <div
+        class="absolute inset-0 h-full w-full flex flex-col justify-center items-center"
+      >
+        <p class="font-serif text-center text-4xl p-4">
+          Call or email to book today!
+        </p>
+        <div class="flex flex-col gap-4">
+          <LinkHomePage href={INFO.PHONE_HREF} text={INFO.PHONE} />
+          <LinkHomePage href={INFO.EMAIL_HREF} text={INFO.EMAIL} />
+        </div>
+      </div> -->
+    </div>
+  </section>
+  <section class="mx-auto max-w-prose mt-8 mb-16 px-8">
     <h1 class="mb-8">{pageTitle}</h1>
     <p class="px-2 mb-8">
       All services will come with a consultation and may include a neck,
