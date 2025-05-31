@@ -7,3 +7,4 @@ order: 5
 Any active rashes need to be seen by a medical professional to determine what the condition is and if it is contagious or not prior to requesting an appointment.
 
 If it is contagious, then you will need to follow your physician’s instructions until it has cleared before booking out of caution for others in the office and medical building that we are located in.
+If not contagious, then you may book an appointment after you have had a medical professional diagnose the area.
