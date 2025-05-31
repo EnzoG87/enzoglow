@@ -1,7 +1,7 @@
 ---
 question: "Are your services pregnancy safe?"
 category: "services"
-order: 2
+order: 3
 ---
 
 Yes.

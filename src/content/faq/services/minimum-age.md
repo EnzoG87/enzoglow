@@ -1,7 +1,7 @@
 ---
 question: "What is the minimum age you will provide services for? "
 category: "services"
-order: 3
+order: 4
 ---
 
 The minimum age requirement for a service is 14 and I require a legal guardian in the room for the consultation.
