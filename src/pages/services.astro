@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 
 import BaseLayout from "@/layouts/BaseLayout.astro";
@@ -15,12 +16,35 @@ const addOns = services.filter((service) => {
 });
 
 import ServiceListing from "@/components/ServiceListing.astro";
+import redReliefFacialImg from "@/assets/services/red-relief-facial.jpg";
 
 const pageTitle = "Services";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <section class="mx-auto max-w-prose mt-28 mb-16 px-8">
+  <section class="mx-auto">
+    <div class="relative h-[480px] w-full">
+      <Image
+        src={redReliefFacialImg}
+        alt="facials"
+        class="h-full w-full object-cover"
+        loading="eager"
+      />
+      <div class="absolute inset-0 h-full w-full bg-black opacity-60"></div>
+      <!-- <div
+        class="absolute inset-0 h-full w-full flex flex-col justify-center items-center"
+      >
+        <p class="font-serif text-center text-4xl p-4">
+          Call or email to book today!
+        </p>
+        <div class="flex flex-col gap-4">
+          <LinkHomePage href={INFO.PHONE_HREF} text={INFO.PHONE} />
+          <LinkHomePage href={INFO.EMAIL_HREF} text={INFO.EMAIL} />
+        </div>
+      </div> -->
+    </div>
+  </section>
+  <section class="mx-auto max-w-prose mt-8 mb-16 px-8">
     <h1 class="mb-8">{pageTitle}</h1>
     <p class="px-2 mb-8">
       All services will come with a consultation and may include a neck,
@@ -52,24 +76,21 @@ const pageTitle = "Services";
   <section class="prose mx-auto max-w-prose px-8" id="service-policies">
     <h1 class="mb-8">Service Policies</h1>
     <p>
-      A
-      <span class="font-bold text-enzo-green-light"
-        >$25 deposit is required</span
-      >
-      for all services, which will be applied towards the service and are
-      <span class="font-bold text-enzo-green-light">non-refundable</span>.
-      Consultation services must be paid in full to book a time.
+      Late arrivals of more than 10 minutes will be rescheduled, and a 20%
+      deposit will be charged and applied towards the next booked appointment.
+      There will be reminders sent leading up to your appointment to give you
+      the opportunity to reschedule if needed.
     </p>
     <p>
-      Late arrivals of more than 10 minutes will be rescheduled, and the deposit
-      will be applied towards the next appointment. There will be reminders sent
-      leading up to your appointment to give you the opportunity to reschedule
-      if needed.
+      The first cancellation made less than 24 hours prior to the appointment
+      will have the option to reschedule. Any following cancellations made
+      within less than 24 hours of scheduled appointments will need to pay a
+      deposit of 20% of the appointment cost to reschedule and will have it
+      applied towards the session total.
     </p>
     <p>
       The time and products in the office is valuable and we request that you
       plan accordingly or communicate with us in consideration of other clients
-      on the schedule and waiting list.
     </p>
     <p>
       Please view our
