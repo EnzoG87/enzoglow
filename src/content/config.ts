@@ -11,21 +11,14 @@ const faqCollection = defineCollection({
 
 const servicesCollection = defineCollection({
   type: "content",
-  schema: ({ image }) =>
-    z.object({
-      title: z.string(),
-      anchorId: z.string(),
-      popUp: z.string(),
-      category: z.string(),
-      cost: z.number(),
-      deposit: z.number().optional(),
-      duration: z.number(),
-      order: z.number(),
-      showPopUp: z.boolean(),
-      isAddOn: z.boolean(),
-      imgSrc: image(),
-      imgAlt: z.string(),
-    }),
+  schema: z.object({
+    title: z.string(),
+    category: z.enum(["primary", "secondary", "extra"]),
+    cost: z.number(),
+    altCost: z.number().optional(),
+    duration: z.number(),
+    order: z.number(),
+  }),
 });
 
 export const collections = {
