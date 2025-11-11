@@ -13,7 +13,7 @@ const servicesCollection = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
-    category: z.enum(["primary", "secondary", "extra"]),
+    category: z.enum(["primary", "secondary", "addOn"]),
     cost: z.number(),
     altCost: z.number().optional(),
     duration: z.number(),

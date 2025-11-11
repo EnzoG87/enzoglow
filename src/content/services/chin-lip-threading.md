@@ -1,6 +1,6 @@
 ---
 title: "Chin/Lip Threading"
-category: "extra"
+category: "addOn"
 cost: 18
 altCost: 30
 duration: 15

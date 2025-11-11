@@ -1,6 +1,6 @@
 ---
 title: "Lash Lift"
-category: "extra"
+category: "addOn"
 cost: 99
 duration: 45
 order: 3

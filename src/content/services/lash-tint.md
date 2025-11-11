@@ -1,6 +1,6 @@
 ---
 title: "Lash Tint"
-category: "extra"
+category: "addOn"
 cost: 28
 duration: 15
 order: 4
