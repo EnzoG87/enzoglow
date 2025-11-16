@@ -1,20 +1,10 @@
 ---
 title: "Consultation"
-anchorId: "consultation"
-popUp: ""
-category: "Skin Care"
-cost: 30
-deposit: 5
-duration: 15
-order: 9
-showPopUp: false
-isAddOn: false
-imgSrc: "../../assets/services/consultation.jpg"
-imgAlt: "Consultation"
+category: "secondary"
+cost: 55
+duration: 30
+order: 3
 ---
 
-Do you have questions or concerns that you would like to address before booking an appointment?
-Or perhaps you have been thinking about a specific skin product or beauty tool and would like some insight on if it is suitable for your skin and goals before deciding whether or not to purchase it?
-
-This informative session via in-person, FaceTime, or Zoom will help provide answers for your inquiries while connecting directly.
-Enzo Glow is here to help! $30 for 15 minutes, $55 for 30 mins, and $75 for 45 mins.
+Want to chat before receiving a service?
+In office and virtual consultations available!
