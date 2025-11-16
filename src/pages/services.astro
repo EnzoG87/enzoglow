@@ -6,19 +6,26 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import LinkHomePage from "@/components/LinkHomePage.astro";
 
 let services = await getCollection("services");
-const mainServices = services
+const primaryServices = services
   .filter((service) => {
-    return !service.data.isAddOn;
+    return service.data.category == "primary";
   })
   .sort((a, b) => a.data.order - b.data.order);
-const addOns = services.filter((service) => {
-  return service.data.isAddOn;
-});
+const secondaryServices = services
+  .filter((service) => {
+    return service.data.category == "secondary";
+  })
+  .sort((a, b) => a.data.order - b.data.order);
+const addOnServices = services
+  .filter((service) => {
+    return service.data.category == "addOn";
+  })
+  .sort((a, b) => a.data.order - b.data.order);
 
 import ServiceListing from "@/components/ServiceListing.astro";
 import redReliefFacialImg from "@/assets/services/red-relief-facial.jpg";
 
-const pageTitle = "Services";
+const pageTitle = "Service List";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -31,43 +38,47 @@ const pageTitle = "Services";
         loading="eager"
       />
       <div class="absolute inset-0 h-full w-full bg-black opacity-60"></div>
-      <!-- <div
-        class="absolute inset-0 h-full w-full flex flex-col justify-center items-center"
-      >
-        <p class="font-serif text-center text-4xl p-4">
-          Call or email to book today!
-        </p>
-        <div class="flex flex-col gap-4">
-          <LinkHomePage href={INFO.PHONE_HREF} text={INFO.PHONE} />
-          <LinkHomePage href={INFO.EMAIL_HREF} text={INFO.EMAIL} />
-        </div>
-      </div> -->
     </div>
   </section>
   <section class="mx-auto max-w-prose mt-8 mb-16 px-8">
     <h1 class="mb-8">{pageTitle}</h1>
-    <p class="px-2 mb-8">
-      All services will come with a consultation and may include a neck,
-      decollete, arm, and hand massage. Multiple sessions and or homecare is
-      required for optimal results.
-    </p>
-    <p class="px-2 mb-8">
-      All areas addressed must be free of active sunburn, open or healing
-      wounds, and rashes. In the case of a rash, please consult a medical
-      professional to identify the condition and confirm that it is not
-      contagious before booking an appointment with us.
-    </p>
     <div class="flex flex-col gap-6">
-      <ServiceListing items={mainServices} />
+      <ServiceListing items={primaryServices} />
+    </div>
+  </section>
+  <section class="mx-auto max-w-prose mt-8 mb-16 px-8">
+    <p class="px-2 mb-8">
+      Best for facials and body services involving barrier supporting moisture,
+      peptide rich serums, and probiotic rich ingredients to plump, tighten, and
+      brighten overall complexion and soothe visible irritation or congestion.
+      Perfect for dry, rough, and dull skin, or inflammation, redness, scarring,
+      pigmentation, and mild to moderate acne.
+    </p>
+    <p class="px-2 mb-8">
+      May involve gentle peels and special modalities such as LED light therapy,
+      and includes addressing the neck, shoulders, arms, and hands.
+    </p>
+    <p class="px-2 mb-8">
+      Longer sessions allow for use of more advanced protocols for increased
+      results and enhanced experience.
+    </p>
+    <p class="px-2 mb-8">
+      All of the above includes emailed appointment observations, product
+      recommendations, and usage instructions.
+    </p>
+  </section>
+  <section class="mx-auto max-w-prose mb-16 px-8">
+    <div class="flex flex-col gap-6">
+      <ServiceListing items={secondaryServices} />
       <div class="flex justify-center">
         <LinkHomePage href="/contact" text="Book Now" />
       </div>
     </div>
   </section>
   <section class="mx-auto max-w-prose mb-16 px-8">
-    <h1 class="mb-8">Add-Ons</h1>
+    <h1 class="mb-8">Service Add-Ons</h1>
     <div class="flex flex-col gap-6">
-      <ServiceListing items={addOns} />
+      <ServiceListing items={addOnServices} />
       <div class="flex justify-center">
         <LinkHomePage href="/contact" text="Book Now" />
       </div>
