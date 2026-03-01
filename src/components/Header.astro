@@ -4,6 +4,7 @@ import { Icon } from "astro-icon/components";
 import { LINKS, SOCIALS } from "@/consts.ts";
 import enzoGlowLogo from "@/assets/Enzo-Glow-Logo.svg";
 import enzoGlowLogoLeaf from "@/assets/Enzo-Glow-Logo-Leaf.svg";
+import BookingButton from "./BookingButton.astro";
 ---
 
 <header
@@ -16,11 +17,7 @@ import enzoGlowLogoLeaf from "@/assets/Enzo-Glow-Logo-Leaf.svg";
     aria-label="menu"
   >
     <a href="/">
-      <Image
-        src={enzoGlowLogo}
-        alt="icon"
-        class="h-16 w-min hidden md:block"
-      />
+      <Image src={enzoGlowLogo} alt="icon" class="h-16 w-min hidden md:block" />
       <Image
         src={enzoGlowLogoLeaf}
         alt="icon"
@@ -103,6 +100,9 @@ import enzoGlowLogoLeaf from "@/assets/Enzo-Glow-Logo-Leaf.svg";
             ))
           }
         </ul>
+        <div class="flex justify-center">
+          <BookingButton />
+        </div>
         <div class="flex justify-center gap-8">
           {
             SOCIALS.map((social) => (

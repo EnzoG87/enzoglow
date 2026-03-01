@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { INFO } from "@/consts.ts";
 
+import BookingButton from "@/components/BookingButton.astro";
 import LinkHomePage from "@/components/LinkHomePage.astro";
 import redReliefFacialImg from "@/assets/services/red-relief-facial.jpg";
 
@@ -23,11 +24,12 @@ const pageTitle = "Contact";
         class="absolute inset-0 h-full w-full flex flex-col justify-center items-center"
       >
         <p class="font-serif text-center text-4xl p-4">
-          Call or email to book today!
+          Schedule an appointment today!
         </p>
         <div class="flex flex-col gap-4">
           <LinkHomePage href={INFO.PHONE_HREF} text={INFO.PHONE} />
           <LinkHomePage href={INFO.EMAIL_HREF} text={INFO.EMAIL} />
+          <BookingButton />
         </div>
       </div>
     </div>
