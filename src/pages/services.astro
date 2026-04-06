@@ -41,72 +41,14 @@ const pageTitle = "Service List";
       <div class="absolute inset-0 h-full w-full bg-black opacity-60"></div>
     </div>
   </section>
-  <section class="mx-auto max-w-prose mt-8 mb-16 px-8">
-    <h1 class="mb-8">{pageTitle}</h1>
-    <div class="flex flex-col gap-6">
-      <ServiceListing items={primaryServices} />
-    </div>
-  </section>
-  <section class="mx-auto max-w-prose mt-8 mb-16 px-8">
-    <p class="px-2 mb-8">
-      Best for facials and body services involving barrier supporting moisture,
-      peptide rich serums, and probiotic rich ingredients to plump, tighten, and
-      brighten overall complexion and soothe visible irritation or congestion.
-      Perfect for dry, rough, and dull skin, or inflammation, redness, scarring,
-      pigmentation, and mild to moderate acne.
-    </p>
-    <p class="px-2 mb-8">
-      May involve gentle peels and special modalities such as LED light therapy,
-      and includes addressing the neck, shoulders, arms, and hands.
-    </p>
-    <p class="px-2 mb-8">
-      Longer sessions allow for use of more advanced protocols for increased
-      results and enhanced experience.
-    </p>
-    <p class="px-2 mb-8">
-      All of the above includes emailed appointment observations, product
-      recommendations, and usage instructions.
-    </p>
-  </section>
-  <section class="mx-auto max-w-prose mb-16 px-8">
-    <div class="flex flex-col gap-6">
-      <ServiceListing items={secondaryServices} />
-      <div class="flex justify-center">
-        <BookingButton />
-      </div>
-    </div>
-  </section>
-  <section class="mx-auto max-w-prose mb-16 px-8">
-    <h1 class="mb-8">Service Add-Ons</h1>
-    <div class="flex flex-col gap-6">
-      <ServiceListing items={addOnServices} />
-      <div class="flex justify-center">
-        <BookingButton />
-      </div>
-    </div>
-  </section>
-  <section class="prose mx-auto max-w-prose px-8" id="service-policies">
-    <h1 class="mb-8">Service Policies</h1>
+  <section
+    class="flex flex-col items-center gap-6 mx-auto max-w-prose mt-16 mb-16 px-8"
+  >
     <p>
-      Late arrivals of more than 10 minutes will be rescheduled, and a 20%
-      deposit will be charged and applied towards the next booked appointment.
-      There will be reminders sent leading up to your appointment to give you
-      the opportunity to reschedule if needed.
+      Please view our services and book an appointment at the link below. You
+      will be directed to our online scheduling page to view hours and
+      availability.
     </p>
-    <p>
-      The first cancellation made less than 24 hours prior to the appointment
-      will have the option to reschedule. Any following cancellations made
-      within less than 24 hours of scheduled appointments will need to pay a
-      deposit of 20% of the appointment cost to reschedule and will have it
-      applied towards the session total.
-    </p>
-    <p>
-      The time and products in the office is valuable and we request that you
-      plan accordingly or communicate with us in consideration of other clients
-    </p>
-    <p>
-      Please view our
-      <a href="/policies">appointment policies.</a>
-    </p>
+    <BookingButton />
   </section>
 </BaseLayout>
